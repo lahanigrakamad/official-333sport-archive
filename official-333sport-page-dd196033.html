@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+  <title>333体育 · 稳定入口 · 精简说明</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    }
+
+    body {
+      background: #f4f9fc;
+      color: #1a2b3c;
+      line-height: 1.6;
+      padding: 0 1.2rem 3rem 1.2rem;
+      min-height: 100vh;
+    }
+
+    .wrap {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* hero */
+    .hero {
+      padding: 3rem 0 2.2rem 0;
+      border-bottom: 2px solid #b6dae4;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: #0b4559;
+      display: flex;
+      align-items: center;
+      gap: 0.2rem;
+    }
+
+    .hero .badge {
+      background: #d9edf2;
+      font-size: 0.9rem;
+      font-weight: 400;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      color: #146a82;
+      margin-left: 0.5rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #2c4d5a;
+      margin-top: 1rem;
+      max-width: 75%;
+    }
+
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 1.6rem; flex-wrap: wrap; }
+      .hero p { max-width: 100%; font-size: 1rem; }
+    }
+
+    /* 网格卡片区 */
+    .grid-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      margin: 2.5rem 0;
+    }
+
+    .card {
+      background: #ffffff;
+      border-left: 6px solid #3a9bb0;
+      border-radius: 16px;
+      padding: 1.6rem 1.4rem;
+      box-shadow: 0 4px 12px rgba(28, 97, 112, 0.06);
+      transition: transform 0.1s, box-shadow 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(33, 117, 135, 0.10);
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #10596e;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .card p, .card li {
+      font-size: 0.95rem;
+      color: #1e3f4d;
+    }
+
+    .card ul {
+      list-style: none;
+      padding-left: 0.2rem;
+      margin-top: 0.5rem;
+    }
+
+    .card li::before {
+      content: "—";
+      color: #4ba8bd;
+      margin-right: 0.4rem;
+    }
+
+    @media (max-width: 640px) {
+      .grid-2col { grid-template-columns: 1fr; }
+    }
+
+    /* 说明区 + 场景 */
+    .section-block {
+      background: #e9f3f7;
+      border-radius: 28px;
+      padding: 2rem 2rem 2rem 2rem;
+      margin: 2rem 0;
+    }
+
+    .section-block h2 {
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: #094452;
+      border-bottom: 1px solid #b7d9e3;
+      padding-bottom: 0.3rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .insight-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem 2.5rem;
+      margin-top: 1rem;
+    }
+
+    .insight-item {
+      flex: 1 1 180px;
+    }
+
+    .insight-item .num {
+      font-size: 2rem;
+      font-weight: 300;
+      color: #3a9bb0;
+      line-height: 1;
+    }
+
+    .insight-item p {
+      margin-top: 0.2rem;
+    }
+
+    .small-note {
+      font-size: 0.9rem;
+      color: #3a6d7a;
+      margin-top: 0.6rem;
+    }
+
+    /* faq 摘要 */
+    .faq-mini {
+      background: white;
+      border-radius: 24px;
+      padding: 1.6rem 1.8rem;
+      margin: 2.5rem 0 1.5rem 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+      border: 1px solid #d7e7ec;
+    }
+
+    .faq-mini h2 {
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: #0e4f63;
+      margin-bottom: 1rem;
+    }
+
+    .faq-item {
+      padding: 0.8rem 0;
+      border-bottom: 1px solid #e2eef2;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-item strong {
+      color: #0b5b70;
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-item p {
+      color: #234b57;
+    }
+
+    /* 底部链接区 */
+    .footer-link {
+      text-align: center;
+      margin-top: 2.5rem;
+      padding: 1.8rem 0.5rem;
+      border-top: 2px solid #cde2e8;
+    }
+
+    .footer-link a {
+      color: #146a82;
+      background: #dcf0f5;
+      padding: 0.3rem 1.2rem;
+      border-radius: 60px;
+      font-weight: 500;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+
+    .footer-link a:hover {
+      background: #b7dfea;
+    }
+
+    .footer-link .meta {
+      margin-top: 1rem;
+      color: #4d7986;
+      font-size: 0.85rem;
+    }
+
+    hr {
+      border: 0;
+      border-top: 1px dashed #b7d2db;
+      margin: 0.8rem 0;
+    }
+
+    .inline-link-wrap {
+      margin: 1.2rem 0;
+    }
+
+    .inline-link-wrap a {
+      color: #146a82;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-weight: 500;
+    }
+
+    .inline-link-wrap a:hover {
+      color: #0a4152;
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- hero 区 -->
+  <div class="hero">
+    <h1>
+      333体育
+      <span class="badge">说明页</span>
+    </h1>
+    <p>稳定入口 · 结构化的信息页面 · 围绕平台与日常使用场景展开</p>
+  </div>
+
+  <!-- 优势区：网格卡片 -->
+  <div class="grid-2col">
+    <div class="card">
+      <h3>📌 可访问 · 清晰</h3>
+      <p>页面示意基于公开信息整理，不包含动态加载或第三方资源，结构直接。适合了解基础内容与常见索引。</p>
+    </div>
+    <div class="card">
+      <h3>🧩 场景分类</h3>
+      <ul>
+        <li>信息查阅与说明</li>
+        <li>移动端适配浏览</li>
+        <li>轻量快速阅读</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>⚙️ 稳定入口说明</h3>
+      <p>以下段落包含指向相关页面的文本链接，可供参考。所有链接均标为普通文字，不包含诱导字样。</p>
+    </div>
+    <div class="card">
+      <h3>📱 响应布局</h3>
+      <p>卡片和段落适配 320px 以上设备，字体与间距根据视口调整，保持信息可读性。</p>
+    </div>
+  </div>
+
+  <!-- 说明区 + 结构化片段 -->
+  <div class="section-block">
+    <h2>页面内容 · 整理说明</h2>
+    <p style="margin-bottom: 0.8rem;">本页以介绍和摘要形式提供关于平台的结构化信息，包含特点列举、常见问题摘要及入口提示。以下为几点说明：</p>
+    <div class="insight-grid">
+      <div class="insight-item">
+        <div class="num">01</div>
+        <p>信息归类为四个模块：hero、介绍、FAQ 摘要、底部链接</p>
+      </div>
+      <div class="insight-item">
+        <div class="num">02</div>
+        <p>所有内容均基于可验证的公开概述，无夸张承诺</p>
+      </div>
+      <div class="insight-item">
+        <div class="num">03</div>
+        <p>移动优先，网格卡片方便快速扫读</p>
+      </div>
+    </div>
+
+    <!-- 带链接的句子 -->
+    <div class="inline-link-wrap">
+      <p>如果你希望进一步查阅相关介绍，可以前往 <a href="https://official-333sport.com">333体育</a> 查看更多说明。该页面提供的信息侧重稳定入口与整体界面描述。</p>
+    </div>
+    <div class="small-note">* 本页为非官方介绍页，仅用于整理和展示结构化的摘要信息。</div>
+  </div>
+
+  <!-- FAQ 摘要区 -->
+  <div class="faq-mini">
+    <h2>❓ 常见理解的摘要</h2>
+    <div class="faq-item">
+      <strong>这个页面是做什么的？</strong>
+      <p>一个静态介绍页，梳理了关于 <a href="https://official-333sport.com" style="text-decoration: underline; color: #146a82;">333体育</a> 的公开层面信息，像入口说明、特点和 FAQ 节选。方便快速建立基本认知。</p>
+    </div>
+    <div class="faq-item">
+      <strong>信息会频繁变动吗？</strong>
+      <p>页面为一次性生成，不设自动更新。具体请参考实际网站自己的说明或更新日志。</p>
+    </div>
+    <div class="faq-item">
+      <strong>移动端体验如何？</strong>
+      <p>采用弹性网格和 rem 单位，卡片在窄屏下自动堆叠，触摸友好。所有文字可缩放。</p>
+    </div>
+    <div class="faq-item">
+      <strong>是否包含外部资源？</strong>
+      <p>本页不加载外部字体、脚本或图片，纯 HTML + CSS，确保快速打开与隐私。</p>
+    </div>
+  </div>
+
+  <!-- 底部链接区 -->
+  <div class="footer-link">
+    <a href="https://official-333sport.com">333体育</a>
+    <div class="meta">—— 页面中的链接均指向 https://official-333sport.com ——</div>
+    <div style="margin-top: 1rem; font-size: 0.8rem; color: #4f7d88;">
+      本介绍页基于公开信息整理，仅作为摘要说明。<br>
+      稳定入口 · 卡片式布局 · 蓝绿色点缀
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
